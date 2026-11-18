@@ -1,0 +1,44 @@
+{
+  "model": "hist_gradient_boosting",
+  "tuning_method": "Optuna TPE",
+  "objective": "mean GroupKFold observation Top-1 proxy accuracy",
+  "best_cv_top1_proxy_accuracy": 0.584909804434599,
+  "baseline_cv_top1_proxy_accuracy": 0.577257975761859,
+  "best_params": {
+    "learning_rate": 0.01766284459933197,
+    "max_iter": 260,
+    "max_leaf_nodes": 41,
+    "max_depth": 12,
+    "min_samples_leaf": 11,
+    "l2_regularization": 13.852278657784982
+  },
+  "n_trials": 40,
+  "duration_seconds": 198.97049212502316,
+  "training_trips": 80,
+  "training_candidate_rows": 49208,
+  "features": [
+    "distance_m",
+    "heading_error",
+    "segment_length_m",
+    "gps_step_m",
+    "speed_mps",
+    "candidate_rank",
+    "projection_fraction"
+  ],
+  "args": {
+    "zip": "/Users/suravivijayjoshi/Downloads/Student.zip",
+    "out": "tuning_results",
+    "trials": 40,
+    "k": 8,
+    "stride": 8,
+    "max_points": 90,
+    "folds": 3,
+    "seed": 42
+  },
+  "caveats": [
+    "Reference route proximity produces proxy labels, not verified GPS observation labels.",
+    "Training excludes observations without a positive candidate.",
+    "Midpoint KDTree candidates can miss geometrically nearest road segments.",
+    "Student-test trips are not used for tuning or model selection."
+  ]
+}

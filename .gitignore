@@ -1,0 +1,10 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+Student.zip
+*.log
+final_backup/
+backups/

@@ -1,0 +1,24 @@
+{
+  "best_model": "hist_gradient_boosting",
+  "features": [
+    "distance_m",
+    "heading_error",
+    "segment_length_m",
+    "gps_step_m",
+    "speed_mps",
+    "candidate_rank",
+    "projection_fraction"
+  ],
+  "seed": 42,
+  "label_caveat": "Proxy labels: closest reference-route segment by geometric distance, not verified observation ground truth",
+  "candidate_caveat": "Midpoint KDTree can omit truly nearest segments; miss rate is against proxy labels",
+  "selection": "highest group CV proxy observation top-1",
+  "args": {
+    "zip": "/Users/suravivijayjoshi/Downloads/Student.zip",
+    "out": "results",
+    "k": 8,
+    "stride": 8,
+    "max_points": 90,
+    "folds": 3
+  }
+}
